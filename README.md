@@ -1,16 +1,22 @@
-# final_project_ss_app
+                                                    Developers : Corey, Noah, Kevin, Shaun
 
-A new Flutter project.
+                                                    --Silver Screen Movie Application--
 
-## Getting Started
+The Silver Screen application serves as a movie rating app. The app allows users to rate current
+popular and trending movies in the United States and gives the users options of adding these movies
+to a saved or watch later page. The app features login/registration options for storing unique user data within
+an account.
 
-This project is a starting point for a Flutter application.
+                                                            --Requirements--
 
-A few resources to get you started if this is your first Flutter project:
+A dart file with your specific key and token is required that is not part of this project file.
+Example of this class is seen below:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+class ApiKeyToken {
+final key = "Your key here";
+final token = "Your token here";
+}
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
