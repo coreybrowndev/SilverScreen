@@ -1,29 +1,13 @@
+import 'dart:convert';
 import 'dart:core';
+import 'package:flutter/cupertino.dart';
+
+import 'movie.dart';
 
 //Instance of movie object
-class ApiMovieData {
-  final bool isAdultContent;
-  final int movieId;
-  final String movieTitle;
-  final String movieOverview;
-  final String releaseDate;
-  final String posterPath;
-  final bool isSuggested;
-  final List<int> genre;
-
-  ApiMovieData({
-    required this.genre,
-    required this.isSuggested,
-    required this.isAdultContent,
-    required this.movieId,
-    required this.movieOverview,
-    required this.movieTitle,
-    required this.releaseDate,
-    required this.posterPath,
-  });
-
-  factory ApiMovieData.fromJson(Map<dynamic, dynamic> json) {
-    return ApiMovieData(
+class MovieParser {
+  Movie parseMovie(Map<dynamic, dynamic> json) {
+    return Movie(
       genre: List<int>.from(json['genre_ids']),
       isSuggested: false,
       isAdultContent: json['adult'] as bool,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:final_project_ss_app/network/api_request.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  ResponseFromApi().fetchPopular();
 }
 
 class MyApp extends StatelessWidget {
