@@ -1,34 +1,37 @@
+import 'package:final_project_ss_app/movie.dart';
+import 'package:final_project_ss_app/movie_parser.dart';
 import 'package:tmdb_api/tmdb_api.dart';
-import 'package:silver_screen/movie_responsibilities/movie.dart';
-import 'package:silver_screen/network/api_key_token.dart';
+import '../secret.dart';
 
 //Class allows for Api Data request
-class ApiRequest {
-  List<MovieData> popularMovies = [];
-  List<MovieData> trendingMovies = [];
-  final String apiKey = ApiKeyToken().key;
-  final String apiToken = ApiKeyToken().token;
+class ResponseFromApi {
+  List<Movie> popularMovies = [];
+  List<Movie> trendingMovies = [];
+  String key = ApiKeyToken().key;
+  String token = ApiKeyToken().token;
 
   //Pulling Api Information
-  Future<List<MovieData>> fetchMovies() async {
-    TMDB apiResponse = TMDB(ApiKeys(apiKey, apiToken));
-    var popularData = await apiResponse.v3.movies.getPopular();
-    popularMovies = popularData['results']
-        .map<MovieData>((x) => MovieData.fromJson(x))
-        .toList();
+  Future<List<Movie>> fetchMovies() async {
+    TMDB apiResponse = TMDB(ApiKeys(key, token));
+    var popularJson = await apiResponse.v3.movies.getPopular();
+    var jsonResult = popularJson['results'];
 
+    for (Map<dynamic, dynamic> movieData in jsonResult) {
+      var movie = MovieParser().parseMovie(movieData);
+      popularMovies.add(movie);
+    }
     print(popularMovies);
     return popularMovies;
   }
 
   fetchTrending() async {
-    TMDB response = TMDB(ApiKeys(apiKey, apiToken));
+    TMDB response = TMDB(ApiKeys(key, token));
     var trendingResults = await response.v3.trending.getTrending();
     return trendingResults;
   }
 
   fetchPopular() async {
-    TMDB response = TMDB(ApiKeys(apiKey, apiToken));
+    TMDB response = TMDB(ApiKeys(key, token));
     var popularResults = await response.v3.movies.getPopular();
     return popularResults;
   }
