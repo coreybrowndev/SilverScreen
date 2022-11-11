@@ -6,16 +6,16 @@ import 'movie.dart';
 
 //Instance of movie object
 class MovieParser {
-  Movie parseMovie(Map<dynamic, dynamic> json) {
+  Movie parseMovie(Map<dynamic, dynamic> jsonData) {
     return Movie(
-      genre: List<int>.from(json['genre_ids']),
+      genre: List<int>.from(jsonData['genre_ids']),
       isSuggested: false,
-      isAdultContent: json['adult'] as bool,
-      movieId: json['id'] as int,
-      movieOverview: json['overview'] as String,
-      movieTitle: json['title'] as String,
-      releaseDate: json['release_date'] as String,
-      posterPath: json['poster_path'] as String,
+      isAdultContent: jsonData['adult'] as bool,
+      movieId: jsonData['id'] as int,
+      movieOverview: jsonData['overview'] as String,
+      movieTitle: jsonData['title'] as String,
+      releaseDate: jsonData['release_date'] as String,
+      posterPath: jsonData['poster_path'] as String,
     );
   }
 }

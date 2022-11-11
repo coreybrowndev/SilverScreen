@@ -4,14 +4,14 @@ import 'network/api_request.dart';
 import 'movie_parser.dart';
 
 class Movie {
-  late bool isAdultContent;
-  late int movieId;
-  late String movieTitle;
-  late String movieOverview;
-  late String releaseDate;
-  late String posterPath;
-  late bool isSuggested;
-  late List<int> genre;
+  final bool isAdultContent;
+  final int movieId;
+  final String movieTitle;
+  final String movieOverview;
+  final String releaseDate;
+  final String posterPath;
+  final bool isSuggested;
+  final List<int> genre;
 
   Movie({
     required this.genre,
