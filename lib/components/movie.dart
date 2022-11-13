@@ -1,6 +1,6 @@
 import 'dart:core';
-import 'package:final_project_ss_app/movie_parser.dart';
-import 'network/api_request.dart';
+import 'package:final_project_ss_app/components/movie_parser.dart';
+import '../network/api_request.dart';
 import 'movie_parser.dart';
 
 class Movie {
