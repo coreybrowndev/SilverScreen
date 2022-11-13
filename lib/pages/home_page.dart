@@ -1,7 +1,9 @@
 import 'dart:ui';
+import 'package:final_project_ss_app/pages/liked_page.dart';
+import 'package:final_project_ss_app/pages/suggestion_page.dart';
+import 'package:final_project_ss_app/pages/watch_later_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-// import 'package:silver_screen/pages/suggestion_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,20 +16,20 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 2;
 
   final tabs = [
-    //Saved
-    const Center(child: Text("Watch Later")),
+    //Movies saved by user
+    const WatchLaterPage(),
 
     //Trending List
-    // const TrendingList(),
+    // const (),
 
     //Profile
     const Center(child: Text("Profile")),
 
-    //Suggestion
-    // const SuggestionPage(),
+    //Suggestion from popular movies
+    const SuggestionPage(),
 
-    //Likes
-    const Center(child: Text("My List")),
+    //Liked by user
+    const LikedPage(),
   ];
 
   @override
