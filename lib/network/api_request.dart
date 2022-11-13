@@ -1,7 +1,7 @@
-import 'package:final_project_ss_app/movie.dart';
-import 'package:final_project_ss_app/movie_parser.dart';
+import 'package:final_project_ss_app/components/movie.dart';
+import 'package:final_project_ss_app/components/movie_parser.dart';
 import 'package:tmdb_api/tmdb_api.dart';
-import '../secret.dart';
+import 'api_key.dart';
 
 //Class allows for Api Data request
 class ResponseFromApi {
@@ -20,7 +20,7 @@ class ResponseFromApi {
       var movie = MovieParser().parseMovie(movieData);
       popularMovies.add(movie);
     }
-    print(popularMovies);
+    // print(popularMovies);
     return popularMovies;
   }
 
