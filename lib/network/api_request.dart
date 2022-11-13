@@ -20,7 +20,6 @@ class ResponseFromApi {
       var movie = MovieParser().parseMovie(movieData);
       popularMovies.add(movie);
     }
-    // print(popularMovies);
     return popularMovies;
   }
 
