@@ -1,25 +1,47 @@
-                                                    Developers : Corey, Noah, Kevin, Shaun
+Silver Screen
 
-                                                    --Silver Screen Movie Application--
+An app that provides a unique and friendly user experience, gives the users the ability to 
+rate and interact with movies tailored to their personal preference.
 
-The Silver Screen application serves as a movie rating app. The app allows users to rate current
-popular and trending movies in the United States and gives the users options of adding these movies
-to a saved or watch later page. The app features login/registration options for storing unique user data within
-an account.
+***
+#Getting Started
 
-                                                            --Requirements--
+A dart file with your specific Api key and token is required, this will not be included 
+in the project file as it will be specific for each user. 
 
-A dart file with your specific key and token is required that is not part of this project file.
-Example of this class is seen below:
+***
+##Prerequisites
 
+1. A dart file for storing key and token data
+    * e.g api_key_token.dart
+
+* Example of this class is shown below:
+
+```Dart
 class ApiKeyToken {
 final key = "Your key here";
 final token = "Your token here";
 }
+```
+
+***
+###Built With
+
+* Android Studio
+* TMDB 
+
+***
+####Authors
+All parties contributed in the software development process of the application
+* Corey 
+* Kevin 
+* Shaun
+* Noah
 
 
 
 
-follow markdown technique**
 
-github flavored markdown
+
+
+
