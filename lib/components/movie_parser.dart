@@ -1,7 +1,4 @@
-import 'dart:convert';
 import 'dart:core';
-import 'package:flutter/cupertino.dart';
-
 import 'movie.dart';
 
 //Instance of movie object
