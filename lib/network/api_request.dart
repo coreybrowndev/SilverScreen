@@ -23,15 +23,20 @@ class ResponseFromApi {
     return popularMovies;
   }
 
-  fetchTrending() async {
+  TMDB accessApiResponse() {
     TMDB apiResponse = TMDB(ApiKeys(key, token));
-    var trendingJson = await apiResponse.v3.trending.getTrending();
+    return apiResponse;
+  }
+
+  fetchTrending() async {
+    var response = accessApiResponse();
+    var trendingJson = await response.v3.trending.getTrending();
     return trendingJson;
   }
 
   fetchPopular() async {
-    TMDB apiResponse = TMDB(ApiKeys(key, token));
-    var popularJson = await apiResponse.v3.movies.getPopular();
+    var response = accessApiResponse();
+    var popularJson = await response.v3.movies.getPopular();
     return popularJson;
   }
 }
