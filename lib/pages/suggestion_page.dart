@@ -29,7 +29,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
     var listOfMovies = await ResponseFromApi().parsePopular();
     setState(() {
       int startIndex = 0;
-      int endIndex = 14;
+      int endIndex = 15;
       movieSuggestions = listOfMovies.sublist(startIndex, endIndex);
       for (Movie movie in movieSuggestions) {
         listOfMovieCards.add(MovieCard(movie: movie));
