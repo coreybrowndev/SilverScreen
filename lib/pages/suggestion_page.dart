@@ -2,7 +2,6 @@ import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:final_project_ss_app/components/movie.dart';
 import 'package:final_project_ss_app/network/api_request.dart';
 import 'package:flutter/cupertino.dart';
-
 import '../components/movie_card.dart';
 import '../components/user.dart';
 
@@ -27,7 +26,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
   }
 
   Future listOfMovie() async {
-    var listOfMovies = await ResponseFromApi().fetchMovies();
+    var listOfMovies = await ResponseFromApi().parsePopular();
     setState(() {
       int startIndex = 0;
       int endIndex = 14;
