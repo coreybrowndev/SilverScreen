@@ -31,9 +31,10 @@ class User {
 }
 
 User defaultUser = User(
-    firstName: 'Kevin',
-    lastName: 'yu',
-    username: 'kyu',
-    isAdult: true,
-    listOfSavedMovie: [],
-    listOfLikedMovie: []);
+  firstName: 'Kevin',
+  lastName: 'yu',
+  username: 'kyu',
+  isAdult: true,
+  listOfSavedMovie: [],
+  listOfLikedMovie: [],
+);
