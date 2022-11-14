@@ -32,6 +32,7 @@ class ResponseFromApi {
   fetchPopular() async {
     TMDB apiResponse = TMDB(ApiKeys(key, token));
     var popularJson = await apiResponse.v3.movies.getPopular();
+    print(popularJson['results']);
     return popularJson;
   }
 }
