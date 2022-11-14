@@ -51,9 +51,9 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   _swipe(int index, AppinioSwiperDirection direction) {
     if (direction == AppinioSwiperDirection.right) {
-      User().listOfLikedMovie.add(movieSuggestions[(index)]);
+      defaultUser.listOfLikedMovie.add(movieSuggestions[(index)]);
     } else if (direction == AppinioSwiperDirection.top) {
-      User().listOfSavedMovie.add(movieSuggestions[(index)]);
+      defaultUser.listOfSavedMovie.add(movieSuggestions[(index)]);
     } else if (direction == AppinioSwiperDirection.left) {
       listOfDislikeGenre.add(movieSuggestions[(index)].genre);
     } else if (direction == AppinioSwiperDirection.bottom) {}

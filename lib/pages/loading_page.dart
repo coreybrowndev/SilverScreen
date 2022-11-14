@@ -1,7 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project_ss_app/pages/home_page.dart';
+
+import 'home_page.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -22,18 +23,17 @@ class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
 
   @override
-  State<Splash> createState() => _SplashState();
+  SplashState createState() => SplashState();
 }
 
-class _SplashState extends State<Splash> {
+class SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    _returnToHome();
+    _navigateToHome();
   }
 
-  //Change this to call fetch movies method to see if delay will apply
-  _returnToHome() async {
+  _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 30));
   }
 
@@ -43,13 +43,15 @@ class _SplashState extends State<Splash> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         buildLogo(),
+        buildTmdb(),
+        buildLoadingStatus(),
       ],
     );
   }
 
-  Widget buildLogo() => Container(
-        height: 48,
-        child: const Text(
+  Widget buildLogo() => const SizedBox(
+        height: 50,
+        child: Text(
           "Silver Screen",
           style: TextStyle(
               fontSize: 40,
@@ -59,9 +61,9 @@ class _SplashState extends State<Splash> {
         ),
       );
 
-  Widget buildTmdb() => Container(
+  Widget buildTmdb() => const SizedBox(
         height: 20,
-        child: const Text(
+        child: Text(
           'Powered by TMDB',
           style: TextStyle(
             fontSize: 14,
@@ -72,10 +74,12 @@ class _SplashState extends State<Splash> {
       );
 
   Widget buildLoadingStatus() => const SizedBox(
-        height: 20,
-        width: 20,
-        child: CircularProgressIndicator(
+        height: 8,
+        width: 300,
+        child: LinearProgressIndicator(
           color: Colors.white,
+          backgroundColor: Colors.black,
+          minHeight: 1,
         ),
       );
 }

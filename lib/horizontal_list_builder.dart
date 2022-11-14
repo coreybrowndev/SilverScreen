@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 class DisplayMovieListHorizontally extends StatelessWidget {
   final List<Movie> listOfMovie;
 
-  final String loadingMessage = 'Title coming soon';
-
   const DisplayMovieListHorizontally({super.key, required this.listOfMovie});
 
   @override
@@ -40,7 +38,7 @@ class DisplayMovieListHorizontally extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          listOfMovie[index].movieTitle ?? loadingMessage,
+                          listOfMovie[index].movieTitle,
                           style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,

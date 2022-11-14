@@ -13,7 +13,7 @@ class LikedPage extends StatefulWidget {
 }
 
 class LikedPageState extends State<LikedPage> {
-  final List<Movie> liked = User().listOfLikedMovie;
+  final List<Movie> liked = defaultUser.listOfLikedMovie;
   final String loadingMessage = 'Title coming soon';
 
   @override

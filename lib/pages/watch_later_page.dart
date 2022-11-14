@@ -14,7 +14,7 @@ class WatchLaterPage extends StatefulWidget {
 }
 
 class WatchLaterPageState extends State<WatchLaterPage> {
-  final List<Movie> watchLaterList = User().listOfSavedMovie;
+  final List<Movie> watchLaterList = defaultUser.listOfSavedMovie;
   final String loadingMessage = 'Title coming soon';
 
   @override

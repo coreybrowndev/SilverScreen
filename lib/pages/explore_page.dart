@@ -3,14 +3,14 @@ import 'package:final_project_ss_app/horizontal_list_builder.dart';
 import 'package:final_project_ss_app/network/api_request.dart';
 import 'package:flutter/material.dart';
 
-class TrendingList extends StatefulWidget {
-  const TrendingList({super.key});
+class ExplorePage extends StatefulWidget {
+  const ExplorePage({super.key});
 
   @override
-  TrendingListState createState() => TrendingListState();
+  ExplorePageState createState() => ExplorePageState();
 }
 
-class TrendingListState extends State<TrendingList> {
+class ExplorePageState extends State<ExplorePage> {
   List<Movie> trendingList = [];
   List<Movie> popularList = [];
   @override

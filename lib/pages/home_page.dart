@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:final_project_ss_app/pages/explore_page.dart';
 import 'package:final_project_ss_app/pages/liked_page.dart';
 import 'package:final_project_ss_app/pages/suggestion_page.dart';
 import 'package:final_project_ss_app/pages/watch_later_page.dart';
@@ -13,14 +14,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 2;
+  int _currentIndex = 3;
 
   final tabs = [
     //Movies saved by user
     const WatchLaterPage(),
 
     //Trending List
-    // const (),
+    const ExplorePage(),
 
     //Profile
     const Center(child: Text("Profile")),
@@ -32,14 +33,31 @@ class _HomePageState extends State<HomePage> {
     const LikedPage(),
   ];
 
+  String createAppBarTitle(int index) {
+    var appBarTitle = 'Silver Screen';
+    if (index == 0) {
+      appBarTitle = 'Watch Later';
+    } else if (index == 1) {
+      appBarTitle = 'What\'s new';
+    } else if (index == 2) {
+      appBarTitle = 'Profile';
+    } else if (index == 3) {
+      appBarTitle = 'Silver Screen';
+    } else {
+      appBarTitle = 'Favorites';
+    }
+    return appBarTitle;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(
-                'https://sweetclipart.com/multisite/sweetclipart/files/circles_pattern_black_white.png')),
+          fit: BoxFit.cover,
+          image: NetworkImage(
+              'https://sweetclipart.com/multisite/sweetclipart/files/circles_pattern_black_white.png'),
+        ),
       ),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
@@ -47,9 +65,19 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.transparent,
           //Logo and page title
           appBar: AppBar(
+            centerTitle: false,
+            titleSpacing: 25,
+            titleTextStyle: const TextStyle(
+              color: Colors.white,
+              fontSize: 48,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w600,
+            ),
             elevation: 0,
             backgroundColor: Colors.transparent,
-            title: buildTitle(),
+            title: Text(
+              createAppBarTitle(_currentIndex),
+            ),
           ),
 
           body: tabs[_currentIndex],
@@ -90,18 +118,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  Widget buildTitle() => Row(
-        children: const [
-          SizedBox(width: 4),
-          Text(
-            "Silver Screen",
-            style: TextStyle(
-                fontSize: 35,
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.italic,
-                color: Colors.white),
-          ),
-        ],
-      );
 }
