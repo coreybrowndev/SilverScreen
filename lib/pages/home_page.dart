@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:final_project_ss_app/components/app_bar_title.dart';
 import 'package:final_project_ss_app/pages/explore_page.dart';
 import 'package:final_project_ss_app/pages/liked_page.dart';
 import 'package:final_project_ss_app/pages/suggestion_page.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //set default tab to suggestion page
   int _currentIndex = 3;
 
   final tabs = [
@@ -32,22 +34,6 @@ class _HomePageState extends State<HomePage> {
     //Liked by user
     const LikedPage(),
   ];
-
-  String createAppBarTitle(int index) {
-    var appBarTitle = 'Silver Screen';
-    if (index == 0) {
-      appBarTitle = 'Watch Later';
-    } else if (index == 1) {
-      appBarTitle = 'What\'s new';
-    } else if (index == 2) {
-      appBarTitle = 'Profile';
-    } else if (index == 3) {
-      appBarTitle = 'Silver Screen';
-    } else {
-      appBarTitle = 'Favorites';
-    }
-    return appBarTitle;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             elevation: 0,
             backgroundColor: Colors.transparent,
             title: Text(
-              createAppBarTitle(_currentIndex),
+              AppBarTitle().createAppBarTitle(_currentIndex),
             ),
           ),
 
