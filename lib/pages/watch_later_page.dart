@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:final_project_ss_app/components/movie.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +17,20 @@ class WatchLaterPageState extends State<WatchLaterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return DisplayMovieListVertically(listOfMovie: watchLaterList);
+    if (watchLaterList.isEmpty) {
+      return const Center(
+        child: Text(
+          "Start swiping to add movie to your watch later list",
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
+          softWrap: true,
+          textAlign: TextAlign.center,
+        ),
+      );
+    } else {
+      return DisplayMovieListVertically(listOfMovie: watchLaterList);
+    }
   }
 }
