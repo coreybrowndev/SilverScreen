@@ -6,15 +6,6 @@ import 'package:flutter/cupertino.dart';
 import '../components/movie_card.dart';
 import '../components/user.dart';
 
-User user = User(
-  firstName: 'kev',
-  lastName: 'Yu',
-  username: 'kyu',
-  isAdult: true,
-  listOfSavedMovie: [],
-  listOfLikedMovie: [],
-);
-
 class SuggestionPage extends StatefulWidget {
   const SuggestionPage({Key? key}) : super(key: key);
 
@@ -59,12 +50,10 @@ class _SuggestionPageState extends State<SuggestionPage> {
   }
 
   _swipe(int index, AppinioSwiperDirection direction) {
-    user.listOfLikedMovie.toSet().toList();
-
     if (direction == AppinioSwiperDirection.right) {
-      user.listOfLikedMovie.add(movieSuggestions[(index)]);
+      User().listOfLikedMovie.add(movieSuggestions[(index)]);
     } else if (direction == AppinioSwiperDirection.top) {
-      user.listOfSavedMovie.add(movieSuggestions[(index)]);
+      User().listOfSavedMovie.add(movieSuggestions[(index)]);
     } else if (direction == AppinioSwiperDirection.left) {
       listOfDislikeGenre.add(movieSuggestions[(index)].genre);
     } else if (direction == AppinioSwiperDirection.bottom) {}

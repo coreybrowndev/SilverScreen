@@ -2,21 +2,12 @@ import 'dart:core';
 
 import 'package:final_project_ss_app/components/movie.dart';
 
-//Instance of user object
+//Instance of user object that use as default user
 class User {
-  final String firstName;
-  final String lastName;
-  final String username;
-  var isAdult = false;
+  final String firstName = 'kevin';
+  final String lastName = 'yu';
+  final String username = 'kyu';
+  var isAdult = true;
   List<Movie> listOfLikedMovie = [];
   List<Movie> listOfSavedMovie = [];
-
-  User({
-    required this.firstName,
-    required this.lastName,
-    required this.username,
-    required this.isAdult,
-    required this.listOfLikedMovie,
-    required this.listOfSavedMovie,
-  });
 }

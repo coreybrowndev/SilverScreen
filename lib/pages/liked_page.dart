@@ -1,4 +1,5 @@
 import 'package:final_project_ss_app/components/movie.dart';
+import 'package:final_project_ss_app/components/user.dart';
 import 'package:final_project_ss_app/pages/suggestion_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class LikedPage extends StatefulWidget {
 }
 
 class LikedPageState extends State<LikedPage> {
-  final List<Movie> liked = user.listOfLikedMovie;
+  final List<Movie> liked = User().listOfLikedMovie;
   final String loadingMessage = 'Title coming soon';
 
   @override

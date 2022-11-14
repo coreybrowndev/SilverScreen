@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:final_project_ss_app/components/movie.dart';
-import 'package:final_project_ss_app/pages/suggestion_page.dart';
 import 'package:flutter/material.dart';
 
+import '../components/user.dart';
 import '../vertical_list_builder.dart';
 
 class WatchLaterPage extends StatefulWidget {
@@ -14,7 +14,7 @@ class WatchLaterPage extends StatefulWidget {
 }
 
 class WatchLaterPageState extends State<WatchLaterPage> {
-  final List<Movie> watchLaterList = user.listOfSavedMovie;
+  final List<Movie> watchLaterList = User().listOfSavedMovie;
   final String loadingMessage = 'Title coming soon';
 
   @override
