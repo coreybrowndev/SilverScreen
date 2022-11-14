@@ -16,7 +16,7 @@ class DisplayMovieListVertically extends StatelessWidget {
           height: 6,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.77,
+          height: MediaQuery.of(context).size.height * 0.75,
           child: ListView.builder(
               itemCount: listOfMovie.length,
               scrollDirection: Axis.vertical,
