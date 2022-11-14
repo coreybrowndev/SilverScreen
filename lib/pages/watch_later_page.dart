@@ -2,7 +2,7 @@ import 'package:final_project_ss_app/components/movie.dart';
 import 'package:flutter/material.dart';
 
 import '../components/user.dart';
-import '../vertical_list_builder.dart';
+import '../list_builder/vertical_list_view.dart';
 
 class WatchLaterPage extends StatefulWidget {
   const WatchLaterPage({super.key});

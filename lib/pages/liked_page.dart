@@ -1,9 +1,8 @@
 import 'package:final_project_ss_app/components/movie.dart';
 import 'package:final_project_ss_app/components/user.dart';
-import 'package:final_project_ss_app/pages/suggestion_page.dart';
 import 'package:flutter/material.dart';
 
-import '../vertical_list_builder.dart';
+import '../list_builder/vertical_list_view.dart';
 
 class LikedPage extends StatefulWidget {
   const LikedPage({super.key});

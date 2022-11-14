@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:final_project_ss_app/components/movie.dart';
 import 'package:flutter/material.dart';
 
