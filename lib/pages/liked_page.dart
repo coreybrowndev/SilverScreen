@@ -19,18 +19,16 @@ class LikedPageState extends State<LikedPage> {
   @override
   Widget build(BuildContext context) {
     if (liked.isEmpty) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          Text(
-            "Go to for you page and start swiping!",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          )
-        ],
+      return const Center(
+        child: Text(
+          "Start swiping to add movie to your favorites",
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
+          softWrap: true,
+          textAlign: TextAlign.center,
+        ),
       );
     } else {
       return DisplayMovieListVertically(listOfMovie: liked);
