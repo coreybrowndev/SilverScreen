@@ -106,10 +106,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 tabs: const [
                   GButton(icon: Icons.airplay, text: "Saved"),
-                  GButton(icon: Icons.bolt_outlined, text: "Trending"),
+                  GButton(icon: Icons.bolt_outlined, text: "Explore"),
                   GButton(icon: Icons.assignment_ind, text: "Profile"),
                   GButton(icon: Icons.lightbulb_outline, text: "For You"),
-                  GButton(icon: Icons.favorite_border, text: "Likes"),
+                  GButton(icon: Icons.favorite_border, text: "Liked"),
                 ],
               ),
             ),
