@@ -10,8 +10,8 @@ class ResponseFromApi {
   String key = ApiKeyToken().key;
   String token = ApiKeyToken().token;
 
-  //Pulling Api Information
-  Future<List<Movie>> fetchMovies() async {
+  //Pulling Api Information for Popular Movies
+  Future<List<Movie>> parsePopular() async {
     TMDB apiResponse = TMDB(ApiKeys(key, token));
     var popularJson = await apiResponse.v3.movies.getPopular();
     var jsonResult = popularJson['results'];
@@ -24,14 +24,14 @@ class ResponseFromApi {
   }
 
   fetchTrending() async {
-    TMDB response = TMDB(ApiKeys(key, token));
-    var trendingResults = await response.v3.trending.getTrending();
-    return trendingResults;
+    TMDB apiResponse = TMDB(ApiKeys(key, token));
+    var trendingJson = await apiResponse.v3.trending.getTrending();
+    return trendingJson;
   }
 
   fetchPopular() async {
-    TMDB response = TMDB(ApiKeys(key, token));
-    var popularResults = await response.v3.movies.getPopular();
-    return popularResults;
+    TMDB apiResponse = TMDB(ApiKeys(key, token));
+    var popularJson = await apiResponse.v3.movies.getPopular();
+    return popularJson;
   }
 }
