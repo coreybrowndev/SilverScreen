@@ -4,13 +4,13 @@ An app that provides a unique and friendly user experience, gives the users the 
 rate and interact with movies tailored to their personal preference.
 
 ***
-**Getting Started**
+#**Getting Started**
 
 A dart file with your specific Api key and token is required, this will not be included 
 in the project file as it will be specific for each user. 
 
 ***
-**Prerequisites**
+#**Prerequisites**
 
 1. A dart file for storing key and token data
     * e.g api_key_token.dart
@@ -25,13 +25,13 @@ final token = "Your token here";
 ```
 
 ***
-**Built With**
+#**Built With**
 
 * Android Studio
 * TMDB 
 
 ***
-**Authors**
+#**Authors**
 All parties contributed in the software development process of the application
 * Corey 
 * Kevin 
