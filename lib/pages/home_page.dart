@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:final_project_ss_app/components/app_bar_title.dart';
+import 'package:final_project_ss_app/components/app_page_title.dart';
 import 'package:final_project_ss_app/pages/explore_page.dart';
 import 'package:final_project_ss_app/pages/liked_page.dart';
 import 'package:final_project_ss_app/pages/suggestion_page.dart';
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             elevation: 0,
             backgroundColor: Colors.transparent,
             title: Text(
-              AppBarTitle().createAppBarTitle(_currentIndex),
+              PageTitle().createPageTitle(_currentIndex),
             ),
           ),
 

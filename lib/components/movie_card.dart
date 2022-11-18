@@ -21,16 +21,15 @@ class MovieCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildTopHalf(movie, context),
-            buildBottomHalf(movie, context),
+            buildCardTopHalf(movie, context),
+            buildDescriptionContainer(movie, context),
           ],
         ),
       ),
     );
   }
 
-  //Poster & movie information
-  Widget buildTopHalf(movie, context) => Row(
+  Widget buildCardTopHalf(movie, context) => Row(
         children: [
           Column(
             children: [
@@ -51,8 +50,7 @@ class MovieCard extends StatelessWidget {
         ],
       );
 
-  //Description
-  Widget buildBottomHalf(movie, context) => Column(
+  Widget buildDescriptionContainer(movie, context) => Column(
         children: [
           Text(
             'Description \n',
@@ -72,7 +70,7 @@ class MovieCard extends StatelessWidget {
       );
 
   //Includes the release date of the movie
-  Widget buildMovieTitle(Movie movie, context) => Column(
+  Widget buildMovieTitle(movie, context) => Column(
         children: [
           SizedBox(
             child: Text(
@@ -95,15 +93,14 @@ class MovieCard extends StatelessWidget {
         ],
       );
 
-  displayPoster(Movie movie) => Container(
+  displayPoster(movie) => Container(
         margin: const EdgeInsets.all(10),
         height: 200,
         width: 150,
         decoration: BoxDecoration(
           color: Colors.transparent,
           image: DecorationImage(
-            image: NetworkImage(
-                'https://image.tmdb.org/t/p/w500${movie.posterPath}'),
+            image: NetworkImage(movie.posterPath),
             fit: BoxFit.fill,
           ),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
