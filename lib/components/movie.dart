@@ -7,13 +7,15 @@ class Movie {
   final String releaseDate;
   final String posterPath;
   final List<int> genre;
+  final String popularity;
 
   Movie({
-    required this.genre,
     required this.isAdultContent,
-    required this.movieOverview,
     required this.movieTitle,
+    required this.movieOverview,
     required this.releaseDate,
     required this.posterPath,
+    required this.genre,
+    required this.popularity,
   });
 }
