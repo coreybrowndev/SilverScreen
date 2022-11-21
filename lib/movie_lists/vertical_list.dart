@@ -1,10 +1,10 @@
-import 'package:final_project_ss_app/components/movie.dart';
+import 'package:final_project_ss_app/movie_components/movie.dart';
 import 'package:flutter/material.dart';
 
-class DisplayMovieListVertically extends StatelessWidget {
+class VerticalMovieList extends StatelessWidget {
   final List<Movie> listOfMovie;
 
-  const DisplayMovieListVertically({super.key, required this.listOfMovie});
+  const VerticalMovieList({super.key, required this.listOfMovie});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class DisplayMovieListVertically extends StatelessWidget {
           height: 6,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.75,
+          height: MediaQuery.of(context).size.height * 0.72,
           child: ListView.builder(
               itemCount: listOfMovie.length,
               scrollDirection: Axis.vertical,
@@ -36,11 +36,15 @@ class DisplayMovieListVertically extends StatelessWidget {
                             )),
                           ),
                         ),
-                        Text(
-                          listOfMovie[index].movieTitle,
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          child: Text(
+                            listOfMovie[index].movieTitle,
+                            softWrap: true,
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ],
