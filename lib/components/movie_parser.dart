@@ -10,6 +10,7 @@ class MovieParser {
         movieOverview: jsonData['overview'] as String,
         movieTitle: jsonData['title'],
         releaseDate: jsonData['release_date'] as String,
+        popularity: jsonData["vote_average"].toString(),
         posterPath:
             'https://image.tmdb.org/t/p/w500${jsonData['poster_path']}');
   }
