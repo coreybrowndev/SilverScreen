@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class DisplayTrendingMovieListHorizontally extends StatelessWidget {
+class HorizontalMovieList extends StatelessWidget {
   final List trending;
   final String message = 'Loading';
 
-  const DisplayTrendingMovieListHorizontally(
-      {super.key, required this.trending});
+  const HorizontalMovieList({super.key, required this.trending});
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +34,6 @@ class DisplayTrendingMovieListHorizontally extends StatelessWidget {
                               scale: 0.1,
                               'https://image.tmdb.org/t/p/w500${trending[index]['poster_path']}',
                             )),
-                          ),
-                        ),
-                        Text(
-                          trending[index]['title'] ?? message,
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
                           ),
                         ),
                       ],

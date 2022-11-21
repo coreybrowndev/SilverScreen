@@ -1,7 +1,7 @@
 import 'dart:core';
 import 'movie.dart';
 
-class MovieParser {
+class MovieParse {
   final String message = 'loading';
   Movie parseMovie(Map<dynamic, dynamic> jsonData) {
     return Movie(

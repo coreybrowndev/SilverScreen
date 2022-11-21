@@ -1,4 +1,4 @@
-import 'package:final_project_ss_app/list_builder/horizontal_list_view.dart';
+import 'package:final_project_ss_app/movie_lists/horizontal_list.dart';
 import 'package:final_project_ss_app/network/api_request.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +44,7 @@ class ExplorePageState extends State<ExplorePage> {
         const SizedBox(
           height: 10,
         ),
-        DisplayTrendingMovieListHorizontally(trending: trendingList),
+        HorizontalMovieList(trending: trendingList),
         const Text(
           'Popular Movies',
           style: TextStyle(

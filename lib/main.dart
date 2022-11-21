@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:final_project_ss_app/pages/loading_page.dart';
-import 'network/api_request.dart';
 
 void main() {
   runApp(const MyApp());

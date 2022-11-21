@@ -1,8 +1,7 @@
-import 'package:final_project_ss_app/components/movie.dart';
+import 'package:final_project_ss_app/movie_components/movie.dart';
 import 'package:flutter/material.dart';
-
-import '../components/user.dart';
-import '../list_builder/vertical_list_view.dart';
+import '../movie_components/user.dart';
+import '../movie_lists//vertical_list.dart';
 
 class WatchLaterPage extends StatefulWidget {
   const WatchLaterPage({super.key});
@@ -30,7 +29,7 @@ class WatchLaterPageState extends State<WatchLaterPage> {
         ),
       );
     } else {
-      return DisplayMovieListVertically(listOfMovie: watchLaterList);
+      return VerticalMovieList(listOfMovie: watchLaterList);
     }
   }
 }

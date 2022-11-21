@@ -1,9 +1,9 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
-import 'package:final_project_ss_app/components/movie.dart';
+import 'package:final_project_ss_app/movie_components/movie.dart';
 import 'package:final_project_ss_app/network/api_request.dart';
 import 'package:flutter/cupertino.dart';
-import '../components/movie_card.dart';
-import '../components/user.dart';
+import '../movie_components/movie_card.dart';
+import '../movie_components/user.dart';
 
 class SuggestionPage extends StatefulWidget {
   const SuggestionPage({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'dart:core';
-import 'package:final_project_ss_app/components/movie.dart';
+import 'package:final_project_ss_app/movie_components/movie.dart';
 
 class User {
   final String firstName;
