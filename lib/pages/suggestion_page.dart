@@ -4,6 +4,7 @@ import 'package:final_project_ss_app/network/api_request.dart';
 import 'package:flutter/cupertino.dart';
 import '../movie_components/movie_card.dart';
 import '../movie_components/user.dart';
+import 'package:final_project_ss_app/movie_lists/suggestions_list.dart';
 
 class SuggestionPage extends StatefulWidget {
   const SuggestionPage({Key? key}) : super(key: key);
@@ -14,26 +15,16 @@ class SuggestionPage extends StatefulWidget {
 
 class _SuggestionPageState extends State<SuggestionPage> {
   AppinioSwiperController controller = AppinioSwiperController();
-  List<Movie> movieSuggestions = [];
-  List<MovieCard> listOfMovieCards = [];
-
-  List listOfDislikeGenre = [];
+  List<Movie> movieList = [];
+  List<MovieCard> movieSuggestions = [];
 
   @override
-  void initState() {
-    super.initState();
-    listOfMovie();
-  }
+  void initState() async {
+    var apiMovieList = await ResponseFromApi().parsePopular();
 
-  Future listOfMovie() async {
-    var listOfMovies = await ResponseFromApi().parsePopular();
     setState(() {
-      int startIndex = 0;
-      int endIndex = 15;
-      movieSuggestions = listOfMovies.sublist(startIndex, endIndex);
-      for (Movie movie in movieSuggestions) {
-        listOfMovieCards.add(MovieCard(movie: movie));
-      }
+      movieList = apiMovieList;
+      movieSuggestions = SuggestionList().suggestionGenerator(movieList);
     });
   }
 
@@ -41,7 +32,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
   Widget build(BuildContext context) {
     return AppinioSwiper(
       controller: controller,
-      cards: listOfMovieCards,
+      cards: movieSuggestions,
       duration: const Duration(milliseconds: 500),
       maxAngle: 2,
       onSwipe: _swipe,
@@ -50,11 +41,11 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   _swipe(int index, AppinioSwiperDirection direction) {
     if (direction == AppinioSwiperDirection.right) {
-      defaultUser.listOfLikedMovie.add(movieSuggestions[(index)]);
+      defaultUser.listOfLikedMovie.add(movieList[(index)]);
     } else if (direction == AppinioSwiperDirection.top) {
-      defaultUser.listOfSavedMovie.add(movieSuggestions[(index)]);
-    } else if (direction == AppinioSwiperDirection.left) {
-      listOfDislikeGenre.add(movieSuggestions[(index)].genre);
-    } else if (direction == AppinioSwiperDirection.bottom) {}
+      defaultUser.listOfSavedMovie.add(movieList[(index)]);
+    } else {
+      return;
+    }
   }
 }
