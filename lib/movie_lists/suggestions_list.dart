@@ -1,14 +1,18 @@
+import 'dart:math';
+
 import 'package:final_project_ss_app/movie_components/movie_card.dart';
 
 import '../movie_components/movie.dart';
-import '../network/api_request.dart';
 
 class SuggestionList {
   List<MovieCard> suggestionGenerator(List<Movie> movies) {
     List<MovieCard> listOfMovieCards = [];
     List<Movie> suggestions;
-    int startIndex = 0;
-    int endIndex = 15;
+    int startIndex = Random().nextInt(86);
+    print(startIndex);
+    int endIndex = startIndex + 14;
+    print(endIndex);
+
     suggestions = movies.sublist(startIndex, endIndex);
     for (Movie movie in suggestions) {
       listOfMovieCards.add(MovieCard(movie: movie));

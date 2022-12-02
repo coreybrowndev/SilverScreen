@@ -19,9 +19,12 @@ class _SuggestionPageState extends State<SuggestionPage> {
   List<MovieCard> movieSuggestions = [];
 
   @override
-  void initState() async {
-    var apiMovieList = await ResponseFromApi().parsePopular();
+  void initState() {
+    apiResponse();
+  }
 
+  Future apiResponse() async {
+    var apiMovieList = await ResponseFromApi().parsePopular();
     setState(() {
       movieList = apiMovieList;
       movieSuggestions = SuggestionList().suggestionGenerator(movieList);
