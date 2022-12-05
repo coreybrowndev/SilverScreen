@@ -1,14 +1,13 @@
 class PageTitle {
-  //Each number that index refers to is the current tab
-  String createPageTitle(int index) {
+  String createPageTitle(int currentTab) {
     var pageTitle = 'Silver Screen';
-    if (index == 0) {
+    if (currentTab == 0) {
       pageTitle = 'Watch Later';
-    } else if (index == 1) {
+    } else if (currentTab == 1) {
       pageTitle = 'What\'s new';
-    } else if (index == 2) {
+    } else if (currentTab == 2) {
       pageTitle = 'Profile';
-    } else if (index == 3) {
+    } else if (currentTab == 3) {
       pageTitle = 'Silver Screen';
     } else {
       pageTitle = 'Favorites';

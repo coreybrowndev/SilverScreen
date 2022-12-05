@@ -14,7 +14,7 @@ class CardContainer {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                buildMovieTitle(movie, context),
+                displayTitleDate(movie, context),
                 displayRating(movie),
               ],
             ),
@@ -41,8 +41,7 @@ class CardContainer {
         ],
       );
 
-  //Includes the release date of the movie
-  Widget buildMovieTitle(movie, context) => Column(
+  Widget displayTitleDate(movie, context) => Column(
         children: [
           SizedBox(
             child: Text(
