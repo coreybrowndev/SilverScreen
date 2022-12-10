@@ -10,14 +10,14 @@ class MoviePopularityToStars {
       starList.add(emptyStar);
     }
 
-    if (_isOneStar(popularity)) {
-      return starList;
-    } else {
+    if (_isTwoStar(popularity)) {
+      starList[1] = filledStar;
       return starList;
     }
+    return starList;
   }
 
-  bool _isOneStar(popularity) {
-    return popularity <= (21.0);
+  bool _isTwoStar(popularity) {
+    return popularity > (20.0) && popularity < (40.1);
   }
 }
