@@ -27,7 +27,7 @@ class CardContainer {
         children: [
           Text(
             'Description \n',
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headline1,
           ),
           SingleChildScrollView(
             scrollDirection: Axis.vertical,

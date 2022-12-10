@@ -85,10 +85,7 @@ class DisplayPopularMovieListHorizontally extends StatelessWidget {
                         ),
                         Text(
                           popular[index]['title'] ?? message,
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                          ),
+                          style: Theme.of(context).textTheme.headline1,
                         ),
                       ],
                     ),
