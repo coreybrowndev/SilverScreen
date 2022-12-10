@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:final_project_ss_app/movie_components/movie_popularity.dart';
 
 class CardContainer {
   Widget buildCardHeader(movie, context) => Row(
@@ -79,13 +80,6 @@ class CardContainer {
       );
 
   Widget displayRating(movie) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-        ],
-      );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: MoviePopularityToStars().determineStarRating(movie.popularity));
 }
