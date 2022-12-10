@@ -19,12 +19,6 @@ void main() async {
       posterPath:
           'https://image.tmdb.org/t/p/w500${staticMovieTest['poster_path']}');
 
-  final List<Movie> listOfMovieObjects = [];
-  for (Map<dynamic, dynamic> eachMovie in movieParserJsonMap) {
-    final movieObject = MovieParse().parseMovie(eachMovie);
-    listOfMovieObjects.add(movieObject);
-  }
-
   test('Movie parser object matches static movie object', () async {
     final parsedMovie = MovieParse().parseMovie(staticMovieTest);
     final answer = manualMovieParse.movieTitle;
