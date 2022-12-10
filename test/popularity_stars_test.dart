@@ -44,11 +44,15 @@ void main() {
   final table = {
     19.0: oneStarList,
     33.0: twoStarList,
+    50.0: threeStarList,
+    77.0: fourStarList,
+    99.0: fiveStarList
   };
 
   for (var rating in table.keys) {
     test('$rating has correct star list', () {
-      var result = MoviePopularityToStars().displayRating(rating).toString();
+      var result =
+          MoviePopularityToStars().determineStarRating(rating).toString();
       expect(table[rating].toString(), result);
     });
   }
