@@ -36,6 +36,8 @@ class CardContainer {
               child: Text(
                 movie.movieOverview,
                 softWrap: true,
+                maxLines: 6,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           )

@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             titleSpacing: 25,
             titleTextStyle: const TextStyle(
               color: Colors.white,
-              fontSize: 48,
+              fontSize: 34,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w600,
             ),

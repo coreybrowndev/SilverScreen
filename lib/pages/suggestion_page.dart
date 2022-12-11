@@ -17,6 +17,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
   AppinioSwiperController controller = AppinioSwiperController();
   List<Movie> movieList = [];
   List<MovieCard> movieSuggestions = [];
+  static const deviceHeightRatio = 0.6;
 
   @override
   void initState() {
@@ -34,14 +35,15 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
         SizedBox(
-          height: 70,
+          height: 50,
           child: genreSelection(),
         ),
         SizedBox(
-          height: 550,
+          height: deviceHeight * deviceHeightRatio,
           child: AppinioSwiper(
             controller: controller,
             cards: movieSuggestions,
