@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import '../movie_components/movie_card.dart';
 import '../movie_components/user.dart';
 import 'package:final_project_ss_app/movie_lists/suggestions_list.dart';
+import 'package:final_project_ss_app/movie_components/genre_select_widget.dart';
 
 class SuggestionPage extends StatefulWidget {
   const SuggestionPage({Key? key}) : super(key: key);
@@ -33,12 +34,23 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   @override
   Widget build(BuildContext context) {
-    return AppinioSwiper(
-      controller: controller,
-      cards: movieSuggestions,
-      duration: const Duration(milliseconds: 500),
-      maxAngle: 2,
-      onSwipe: _swipe,
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          height: 70,
+          child: GenreSelection(),
+        ),
+        SizedBox(
+          height: 550,
+          child: AppinioSwiper(
+            controller: controller,
+            cards: movieSuggestions,
+            duration: const Duration(milliseconds: 500),
+            maxAngle: 2,
+            onSwipe: _swipe,
+          ),
+        )
+      ],
     );
   }
 

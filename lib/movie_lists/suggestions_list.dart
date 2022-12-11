@@ -9,10 +9,7 @@ class SuggestionList {
     List<MovieCard> listOfMovieCards = [];
     List<Movie> suggestions;
     int startIndex = Random().nextInt(86);
-    print(startIndex);
     int endIndex = startIndex + 14;
-    print(endIndex);
-
     suggestions = movies.sublist(startIndex, endIndex);
     for (Movie movie in suggestions) {
       listOfMovieCards.add(MovieCard(movie: movie));

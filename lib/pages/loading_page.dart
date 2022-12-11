@@ -1,7 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:flutter/material.dart';
-
 import 'home_page.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -64,32 +63,15 @@ class SplashState extends State<Splash> {
         ),
       );
 
-  Widget buildTmdb() => SizedBox(
-        height: 100,
-        child: Row(
-          children: [
-            const SizedBox(
-              height: 20,
-              child: Text(
-                "Power By",
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white),
-              ),
-            ),
-            Container(
-              height: 20,
-              width: 150,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.contain,
-                  image: NetworkImage(
-                      'https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg'),
-                ),
-              ),
-            ),
-          ],
+  Widget buildTmdb() => Container(
+        height: 20,
+        child: const Text(
+          "Powered By TMDB",
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+          ),
         ),
       );
 
