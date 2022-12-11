@@ -1,11 +1,10 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:final_project_ss_app/movie_components/movie.dart';
 import 'package:final_project_ss_app/network/api_request.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import '../movie_components/movie_card.dart';
 import '../movie_components/user.dart';
 import 'package:final_project_ss_app/movie_lists/suggestions_list.dart';
-import 'package:final_project_ss_app/movie_components/genre_select_widget.dart';
 
 class SuggestionPage extends StatefulWidget {
   const SuggestionPage({Key? key}) : super(key: key);
@@ -21,6 +20,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   @override
   void initState() {
+    super.initState();
     apiResponse();
   }
 
@@ -38,7 +38,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
       children: <Widget>[
         SizedBox(
           height: 70,
-          child: GenreSelection(),
+          child: genreSelection(),
         ),
         SizedBox(
           height: 550,
@@ -54,6 +54,30 @@ class _SuggestionPageState extends State<SuggestionPage> {
     );
   }
 
+  List<Widget> _buildButtonWithNames() {
+    List<TextButton> buttonList = <TextButton>[];
+    for (var genre in genreMap.entries) {
+      buttonList.add(
+        TextButton(
+          onPressed: () {
+            buildSuggestions(genre.key);
+          },
+          child: Text(genre.value),
+        ),
+      );
+    }
+    return buttonList;
+  }
+
+  void buildSuggestions(int genreID) {
+    setState(() {
+      movieSuggestions = SuggestionList().suggestionFilter(genreID, movieList);
+    });
+  }
+
+  Widget genreSelection() => ListView(
+      scrollDirection: Axis.horizontal, children: _buildButtonWithNames());
+
   _swipe(int index, AppinioSwiperDirection direction) {
     if (direction == AppinioSwiperDirection.right) {
       defaultUser.listOfLikedMovie.add(movieList[(index)]);
@@ -64,3 +88,23 @@ class _SuggestionPageState extends State<SuggestionPage> {
     }
   }
 }
+
+Map<int, String> genreMap = {
+  28: 'Action',
+  12: 'Adventure',
+  16: 'Animation',
+  35: 'Comedy',
+  80: 'Crime',
+  18: 'Drama',
+  10751: 'Family',
+  14: 'Fantasy',
+  36: 'History',
+  27: 'Horror',
+  10402: 'Music',
+  9648: 'Mystery',
+  10749: 'Romance',
+  878: 'Science Fiction',
+  53: 'Thriller',
+  10752: 'War',
+  37: 'Western',
+};

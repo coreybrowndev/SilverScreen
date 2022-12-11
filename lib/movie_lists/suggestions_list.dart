@@ -16,4 +16,19 @@ class SuggestionList {
     }
     return listOfMovieCards;
   }
+
+  List<MovieCard> suggestionFilter(int genreID, List<Movie> movies) {
+    List<Movie> filteredList = [];
+    List<MovieCard> movieCards = [];
+    for (Movie movie in movies) {
+      final movieGenres = movie.genre.toSet();
+      if (movieGenres.contains(genreID)) {
+        filteredList.add(movie);
+      }
+    }
+    for (Movie movie in filteredList) {
+      movieCards.add(MovieCard(movie: movie));
+    }
+    return movieCards;
+  }
 }
