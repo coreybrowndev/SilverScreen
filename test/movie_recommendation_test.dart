@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:final_project_ss_app/movie_components/movie.dart';
-import 'package:final_project_ss_app/movie_components/movie_parser.dart';
+import 'package:final_project_ss_app/movie_components/movie_data_parser.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() async {

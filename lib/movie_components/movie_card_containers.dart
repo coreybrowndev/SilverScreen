@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:final_project_ss_app/movie_components/movie_popularity.dart';
 
 class CardContainer {
   Widget buildCardHeader(movie, context) => Row(
@@ -14,7 +15,7 @@ class CardContainer {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                buildMovieTitle(movie, context),
+                displayTitleDate(movie, context),
                 displayRating(movie),
               ],
             ),
@@ -26,7 +27,7 @@ class CardContainer {
         children: [
           Text(
             'Description \n',
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headline1,
           ),
           SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -41,8 +42,7 @@ class CardContainer {
         ],
       );
 
-  //Includes the release date of the movie
-  Widget buildMovieTitle(movie, context) => Column(
+  Widget displayTitleDate(movie, context) => Column(
         children: [
           SizedBox(
             child: Text(
@@ -80,13 +80,6 @@ class CardContainer {
       );
 
   Widget displayRating(movie) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-          Icon(Icons.star_border),
-        ],
-      );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: MoviePopularityToStars().determineStarRating(movie.popularity));
 }

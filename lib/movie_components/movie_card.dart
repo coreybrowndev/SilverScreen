@@ -4,8 +4,6 @@ import 'package:final_project_ss_app/movie_components/movie_card_containers.dart
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
-  static const deviceHeightRatio = 0.6;
-  static const deviceWidthRatio = 0.85;
 
   const MovieCard({super.key, required this.movie});
 
@@ -13,6 +11,9 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+    const deviceHeightRatio = 0.6;
+    const deviceWidthRatio = 0.85;
+    const circularCardRadius = 16.0;
 
     return Center(
       child: Container(
@@ -23,7 +24,8 @@ class MovieCard extends StatelessWidget {
             border: Border.all(
               color: Colors.white,
             ),
-            borderRadius: const BorderRadius.all(Radius.circular(16))),
+            borderRadius:
+                const BorderRadius.all(Radius.circular(circularCardRadius))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

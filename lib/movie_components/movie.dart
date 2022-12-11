@@ -7,7 +7,7 @@ class Movie {
   final String releaseDate;
   final String posterPath;
   final List<int> genre;
-  final String popularity;
+  final double popularity;
 
   Movie({
     required this.isAdultContent,

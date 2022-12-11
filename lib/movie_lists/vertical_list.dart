@@ -8,6 +8,9 @@ class VerticalMovieList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height;
+    final deviceWidth = MediaQuery.of(context).size.width;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -15,7 +18,7 @@ class VerticalMovieList extends StatelessWidget {
           height: 6,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.72,
+          height: deviceHeight * 0.72,
           child: ListView.builder(
               itemCount: listOfMovie.length,
               scrollDirection: Axis.vertical,
@@ -37,14 +40,11 @@ class VerticalMovieList extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.3,
+                          width: deviceWidth * 0.3,
                           child: Text(
                             listOfMovie[index].movieTitle,
                             softWrap: true,
-                            style: const TextStyle(
-                              color: Colors.grey,
-                              fontSize: 16,
-                            ),
+                            style: Theme.of(context).textTheme.headline1,
                           ),
                         ),
                       ],
