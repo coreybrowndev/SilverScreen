@@ -44,7 +44,7 @@ class VerticalMovieList extends StatelessWidget {
                           child: Text(
                             listOfMovie[index].movieTitle,
                             softWrap: true,
-                            style: Theme.of(context).textTheme.headline1,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ),
                       ],

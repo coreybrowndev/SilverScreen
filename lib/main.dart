@@ -13,17 +13,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Silver Screen',
       theme: ThemeData(
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           // Card Movie Title
-          titleLarge: const TextStyle(
+          titleLarge: TextStyle(
               fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
           // Card Release Date
-          labelMedium: const TextStyle(fontSize: 15, color: Colors.black),
+          labelMedium: TextStyle(fontSize: 15, color: Colors.black),
           // Card Description
-          headline1: const TextStyle(
+          bodySmall: TextStyle(
               fontSize: 12, color: Colors.black, fontWeight: FontWeight.bold),
           // Movie Lists Titles
-          headline2: const TextStyle(
+          titleMedium: TextStyle(
             color: Colors.grey,
             fontSize: 16,
           ),
