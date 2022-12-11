@@ -25,7 +25,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
   }
 
   Future apiResponse() async {
-    var apiMovieList = await ResponseFromApi().parsePopular();
+    var apiMovieList = await ApiResponse().parsePopular();
     setState(() {
       movieList = apiMovieList;
       movieSuggestions = SuggestionList().suggestionGenerator(movieList);

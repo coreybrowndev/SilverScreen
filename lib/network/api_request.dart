@@ -7,7 +7,7 @@ import 'api_key.dart';
 import 'package:http/http.dart' as http;
 
 //Class allows for Api Data request
-class ResponseFromApi {
+class ApiResponse {
   List<Movie> popularMovies = [];
   List<Movie> trendingMovies = [];
   String key = ApiKeyToken().key;

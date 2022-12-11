@@ -22,8 +22,8 @@ class ExplorePageState extends State<ExplorePage> {
   void callPosterData() async {
     //Page one is the top 20 movies
     var page = 1;
-    var callPopList = await ResponseFromApi().fetchPopular(page);
-    var callTrendList = await ResponseFromApi().fetchTrending();
+    var callPopList = await ApiResponse().fetchPopular(page);
+    var callTrendList = await ApiResponse().fetchTrending();
     setState(() {
       trendingList = callTrendList;
       popularList = callPopList;
