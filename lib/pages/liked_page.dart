@@ -1,7 +1,6 @@
-import 'package:final_project_ss_app/movie_components/movie.dart';
-import 'package:final_project_ss_app/movie_components/user.dart';
+import 'package:final_project_ss_app/movie_constructors/user.dart';
 import 'package:flutter/material.dart';
-
+import '../movie_constructors/movie.dart';
 import '../movie_lists//vertical_list.dart';
 
 class LikedPage extends StatefulWidget {

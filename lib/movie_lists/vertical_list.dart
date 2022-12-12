@@ -1,4 +1,4 @@
-import 'package:final_project_ss_app/movie_components/movie.dart';
+import 'package:final_project_ss_app/movie_constructors/movie.dart';
 import 'package:flutter/material.dart';
 
 class VerticalMovieList extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:final_project_ss_app/movie_components/app_page_title.dart';
+import 'package:final_project_ss_app/pages/app_page_title.dart';
 import 'package:final_project_ss_app/pages/explore_page.dart';
 import 'package:final_project_ss_app/pages/liked_page.dart';
 import 'package:final_project_ss_app/pages/suggestion_page.dart';
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             titleSpacing: 25,
             titleTextStyle: const TextStyle(
               color: Colors.white,
-              fontSize: 34,
+              fontSize: 48,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w600,
             ),

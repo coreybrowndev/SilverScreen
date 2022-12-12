@@ -1,6 +1,6 @@
-import 'package:final_project_ss_app/movie_components/movie.dart';
-import 'package:final_project_ss_app/movie_components/movie_data_parser.dart';
+import 'package:final_project_ss_app/movie_constructors/movie_data_parser.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import '../movie_constructors/movie.dart';
 import 'api_key.dart';
 
 //Class allows for Api Data request

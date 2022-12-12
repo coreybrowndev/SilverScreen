@@ -9,6 +9,7 @@ class MoviePopularityToStars {
     for (i; i < 4; i++) {
       starList.add(emptyStar);
     }
+
     if (_isOneStar(popularity)) {
       return starList;
     }

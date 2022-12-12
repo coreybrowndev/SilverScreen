@@ -1,6 +1,6 @@
-import 'package:final_project_ss_app/movie_components/movie.dart';
+import 'package:final_project_ss_app/movie_constructors/movie.dart';
 import 'package:flutter/material.dart';
-import '../movie_components/user.dart';
+import '../movie_constructors/user.dart';
 import '../movie_lists//vertical_list.dart';
 
 class WatchLaterPage extends StatefulWidget {

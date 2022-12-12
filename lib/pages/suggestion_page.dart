@@ -1,9 +1,9 @@
 import 'package:appinio_swiper/appinio_swiper.dart';
-import 'package:final_project_ss_app/movie_components/movie.dart';
+import 'package:final_project_ss_app/movie_constructors/movie.dart';
 import 'package:final_project_ss_app/network/api_request.dart';
 import 'package:flutter/material.dart';
-import '../movie_components/movie_card.dart';
-import '../movie_components/user.dart';
+import '../movie_card/movie_card.dart';
+import '../movie_constructors/user.dart';
 import 'package:final_project_ss_app/movie_lists/suggestions_list.dart';
 
 class SuggestionPage extends StatefulWidget {

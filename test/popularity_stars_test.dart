@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:final_project_ss_app/movie_components/movie_popularity.dart';
+import 'package:final_project_ss_app/movie_card/movie_popularity.dart';
 
 void main() {
   const emptyStar = Icon(Icons.star_border);
