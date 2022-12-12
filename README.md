@@ -1,7 +1,7 @@
 # Silver Screen
 
 An app that provides a unique and friendly user experience, gives the users the ability to
-rate and interact with movies tailored to their personal preference.
+interact with movies tailored to their personal preference.
 
 ## Getting Started
 
