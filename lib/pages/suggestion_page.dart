@@ -61,9 +61,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
     for (var genre in genreMap.entries) {
       buttonList.add(
         TextButton(
-          onPressed: () {
-            buildSuggestions(genre.key);
-          },
+          onPressed: () => buildSuggestions(genre.key),
           child: Text(genre.value),
         ),
       );
@@ -104,9 +102,7 @@ Map<int, String> genreMap = {
   27: 'Horror',
   10402: 'Music',
   9648: 'Mystery',
-  10749: 'Romance',
   878: 'Science Fiction',
   53: 'Thriller',
   10752: 'War',
-  37: 'Western',
 };
