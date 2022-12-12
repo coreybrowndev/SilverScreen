@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:final_project_ss_app/movie_card/movie_card.dart';
-import '../movie_constructors//movie.dart';
+import '../movie_constructors/movie.dart';
 
 class SuggestionList {
   List<MovieCard> suggestionGenerator(List<Movie> movies) {
