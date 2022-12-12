@@ -33,9 +33,9 @@ class _SuggestionPageState extends State<SuggestionPage> {
       showDialog(context: context, builder: _directionsPopupDialog);
       movieList = apiMovieList;
       for (Movie movie in SuggestionList().suggestionGenerator(movieList)) {
+        movieSuggestions.add(movie);
         suggestionCards.add(MovieCard(movie: movie));
       }
-      movieSuggestions = SuggestionList().suggestionGenerator(movieList);
     });
   }
 
@@ -80,9 +80,10 @@ class _SuggestionPageState extends State<SuggestionPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const <Widget>[
           Text(
-            'Swipe right to like a movie\n'
-            'Swipe left to dislike a movie\n'
-            'Swipe up to add the movie to your watched later list..Enjoy',
+            'Swipe right to like a movie\n\n'
+            'Swipe left to dislike a movie\n\n'
+            'Swipe up to add the movie to your watched later list\n\n'
+            'Select a Genre and start swiping',
             style: TextStyle(
               color: Colors.black,
             ),
