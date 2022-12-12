@@ -6,11 +6,11 @@ class PageTitle {
     } else if (currentTab == 1) {
       pageTitle = 'What\'s new';
     } else if (currentTab == 2) {
-      pageTitle = 'Profile';
-    } else if (currentTab == 3) {
       pageTitle = 'Silver Screen';
-    } else {
+    } else if (currentTab == 3) {
       pageTitle = 'Favorites';
+    } else {
+      pageTitle = 'Silver Screen';
     }
     return pageTitle;
   }

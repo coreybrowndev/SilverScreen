@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:final_project_ss_app/pages/app_page_title.dart';
+import 'package:final_project_ss_app/pages/focused_page_title.dart';
 import 'package:final_project_ss_app/pages/explore_page.dart';
 import 'package:final_project_ss_app/pages/liked_page.dart';
 import 'package:final_project_ss_app/pages/suggestion_page.dart';
@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   //set default tab to suggestion page
-  int _currentIndex = 3;
+  int _currentIndex = 2;
 
   final tabs = [
     //Movies saved by user
@@ -24,9 +24,6 @@ class _HomePageState extends State<HomePage> {
 
     //Trending List
     const ExplorePage(),
-
-    //Profile
-    const Center(child: Text("Profile")),
 
     //Suggestion from popular movies
     const SuggestionPage(),
@@ -93,7 +90,6 @@ class _HomePageState extends State<HomePage> {
                 tabs: const [
                   GButton(icon: Icons.airplay, text: "Saved"),
                   GButton(icon: Icons.bolt_outlined, text: "Explore"),
-                  GButton(icon: Icons.assignment_ind, text: "Profile"),
                   GButton(icon: Icons.lightbulb_outline, text: "For You"),
                   GButton(icon: Icons.favorite_border, text: "Liked"),
                 ],
