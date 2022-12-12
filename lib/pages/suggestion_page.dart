@@ -29,9 +29,9 @@ class _SuggestionPageState extends State<SuggestionPage> {
   Future apiResponse() async {
     var apiMovieList = await ApiResponse().parsePopular();
     setState(() {
+      showDialog(context: context, builder: _directionsPopupDialog);
       movieList = apiMovieList;
       movieSuggestions = SuggestionList().suggestionGenerator(movieList);
-      showDialog(context: context, builder: _directionsPopupDialog);
     });
   }
 
@@ -58,6 +58,16 @@ class _SuggestionPageState extends State<SuggestionPage> {
     );
   }
 
+  _swipe(int index, AppinioSwiperDirection direction) {
+    if (direction == AppinioSwiperDirection.right) {
+      defaultUser.listOfLikedMovie.add(movieList[(index)]);
+    } else if (direction == AppinioSwiperDirection.top) {
+      defaultUser.listOfSavedMovie.add(movieList[(index)]);
+    } else {
+      return;
+    }
+  }
+
   Widget _directionsPopupDialog(BuildContext context) {
     return AlertDialog(
       title: const Text('How to navigate through movies'),
@@ -65,9 +75,14 @@ class _SuggestionPageState extends State<SuggestionPage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const <Widget>[
-          Text('Swipe right to like a movie\n'
-              'Swipe left to dislike a movie\n'
-              'Swipe up to add the movie to your watched later list..Enjoy')
+          Text(
+            'Swipe right to like a movie\n'
+            'Swipe left to dislike a movie\n'
+            'Swipe up to add the movie to your watched later list..Enjoy',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
         ],
       ),
     );
@@ -94,14 +109,4 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   Widget genreSelection() => ListView(
       scrollDirection: Axis.horizontal, children: _buildButtonWithNames());
-
-  _swipe(int index, AppinioSwiperDirection direction, List<Movie> movieList) {
-    if (direction == AppinioSwiperDirection.right) {
-      defaultUser.listOfLikedMovie.add(movieList[(index)]);
-    } else if (direction == AppinioSwiperDirection.top) {
-      defaultUser.listOfSavedMovie.add(movieList[(index)]);
-    } else {
-      return;
-    }
-  }
 }

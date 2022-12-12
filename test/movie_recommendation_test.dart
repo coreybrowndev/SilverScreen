@@ -6,22 +6,22 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() async {
   final json = await File('test/api_response.json').readAsString();
-  final trendingList = jsonDecode(json);
+  final trendingJson = jsonDecode(json);
 
   test('I can filter one genre from the list of movie', () {
     List<Movie> filteredList = [];
     List<int> userPreference = [28];
-    var movieAsList = trendingList['results'];
+    var jsonResult = trendingJson['results'];
     List<Movie> movieList = [];
 
-    for (Map<dynamic, dynamic> movieData in movieAsList) {
-      var movie = MovieParse().parseMovie(movieData);
-      movieList.add(movie);
+    for (Map<dynamic, dynamic> movieData in jsonResult) {
+      var movieInstance = MovieParse().parseMovie(movieData);
+      movieList.add(movieInstance);
     }
 
     for (Movie movie in movieList) {
-      final apiGenres = movie.genre.toSet();
-      if (apiGenres.intersection(userPreference.toSet()).isNotEmpty) {
+      final movieGenres = movie.genre.toSet();
+      if (movieGenres.intersection(userPreference.toSet()).isNotEmpty) {
         filteredList.add(movie);
       }
     }
