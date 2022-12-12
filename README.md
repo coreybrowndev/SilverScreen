@@ -25,7 +25,7 @@ final token = "Your token here";
 
 ### Built With
 
-- Android Studio
+- Flutter / Dart
 - [TMDB API](https://www.themoviedb.org/about/)
 
 
