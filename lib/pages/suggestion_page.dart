@@ -17,8 +17,9 @@ class SuggestionPage extends StatefulWidget {
 class _SuggestionPageState extends State<SuggestionPage> {
   AppinioSwiperController controller = AppinioSwiperController();
   List<Movie> movieList = [];
-  List<MovieCard> movieSuggestions = [];
+  List<MovieCard> suggestionCards = [];
   static const deviceHeightRatio = 0.6;
+  List<Movie> movieSuggestions = [];
 
   @override
   void initState() {
@@ -31,6 +32,9 @@ class _SuggestionPageState extends State<SuggestionPage> {
     setState(() {
       showDialog(context: context, builder: _directionsPopupDialog);
       movieList = apiMovieList;
+      for (Movie movie in SuggestionList().suggestionGenerator(movieList)) {
+        suggestionCards.add(MovieCard(movie: movie));
+      }
       movieSuggestions = SuggestionList().suggestionGenerator(movieList);
     });
   }
@@ -48,7 +52,7 @@ class _SuggestionPageState extends State<SuggestionPage> {
           height: deviceHeight * deviceHeightRatio,
           child: AppinioSwiper(
             controller: controller,
-            cards: movieSuggestions,
+            cards: suggestionCards,
             duration: const Duration(milliseconds: 500),
             maxAngle: 2,
             onSwipe: _swipe,
@@ -60,9 +64,9 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   _swipe(int index, AppinioSwiperDirection direction) {
     if (direction == AppinioSwiperDirection.right) {
-      defaultUser.listOfLikedMovie.add(movieList[(index)]);
+      defaultUser.listOfLikedMovie.add(movieSuggestions[(index)]);
     } else if (direction == AppinioSwiperDirection.top) {
-      defaultUser.listOfSavedMovie.add(movieList[(index)]);
+      defaultUser.listOfSavedMovie.add(movieSuggestions[(index)]);
     } else {
       return;
     }
@@ -103,6 +107,12 @@ class _SuggestionPageState extends State<SuggestionPage> {
 
   void buildSuggestions(int genreID) {
     setState(() {
+      suggestionCards = [];
+      movieSuggestions = [];
+      for (Movie movie
+          in SuggestionList().suggestionFilter(genreID, movieList)) {
+        suggestionCards.add(MovieCard(movie: movie));
+      }
       movieSuggestions = SuggestionList().suggestionFilter(genreID, movieList);
     });
   }
